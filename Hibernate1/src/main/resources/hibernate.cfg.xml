@@ -15,7 +15,7 @@
 		<property name="connection.url">jdbc:postgresql://localhost/iokeanos</property>
 		
 		<property name="connection.username">postgres</property>
-		<property name="connection.password"></property>
+		<property name="connection.password">postgres</property>
 
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">2</property>
