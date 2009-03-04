@@ -9,12 +9,12 @@
         Testing runtime for all bundles
     </description>
 
-   	<context-param>
+   	<!--context-param>
 	   <param-name>contextClass</param-name>
 	  <param-value>
 		   org.springframework.osgi.context.support.OsgiWebApplicationContext
 	  </param-value>
-	</context-param>
+	</context-param-->
 
 	<servlet id="bridge">
 		<servlet-name>equinoxbridgeservlet</servlet-name>
