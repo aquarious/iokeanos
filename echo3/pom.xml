@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>echo3</groupId>
+	<artifactId>echo3</artifactId>
+	<!--packaging>war</packaging-->
+	<version>0.0.1</version>
+	<description>Simple web echo2 tutorial project</description>
+	
+	<!--  
+		run localy on this link
+		http://localhost:8080/echo3/app 
+	-->
+	
+	<!-- Try downloading the file manually from: 
+		http://www.nextapp.com/platform/echo2/echo/
+		Then, install it using the command: 
+		mvn install:install-file -DgroupId=com.nextapp -DartifactId=echo2-webrender -Dversion=2.1.0.beta5 -Dpackaging=jar -Dfile=/path/to/file
+	-->
+
+	<dependencies>
+		<dependency>
+			<groupId>com.nextapp</groupId>
+			<artifactId>Echo3_app</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nextapp</groupId>
+			<artifactId>Echo3_WebContainer</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nextapp</groupId>
+			<artifactId>Echo3_Extras_App</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nextapp</groupId>
+			<artifactId>Echo3_Extras_WebContainer</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>servletapi</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4-20040521</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<configuration>
+					<webAppSourceDirectory>
+						${basedir}/webapp
+					</webAppSourceDirectory>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
+
