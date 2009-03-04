@@ -17,7 +17,10 @@
 	<!-- Try downloading the file manually from: 
 		http://www.nextapp.com/platform/echo2/echo/
 		Then, install it using the command: 
-		mvn install:install-file -DgroupId=com.nextapp -DartifactId=echo2-webrender -Dversion=2.1.0.beta5 -Dpackaging=jar -Dfile=/path/to/file
+		mvn install:install-file -DgroupId=com.nextapp -DartifactId=Echo3_app -Dversion=3.0 -Dpackaging=jar -Dfile=Echo3_app.jar
+		mvn install:install-file -DgroupId=com.nextapp -DartifactId=Echo3_WebContainer -Dversion=3.0 -Dpackaging=jar -Dfile=Echo3_WebContainer.jar
+		mvn install:install-file -DgroupId=com.nextapp -DartifactId=Echo3_Extras_App -Dversion=3.0 -Dpackaging=jar -Dfile=Echo3_Extras_App.jar
+		mvn install:install-file -DgroupId=com.nextapp -DartifactId=Echo3_Extras_WebContainer -Dversion=3.0 -Dpackaging=jar -Dfile=Echo3_Extras_WebContainer.jar
 	-->
 
 	<dependencies>
@@ -63,5 +66,6 @@
 
 		</plugins>
 	</build>
+	
 </project>
 
