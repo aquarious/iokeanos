@@ -108,7 +108,9 @@ http://localhost:8080/Hibernate1/eventmanager
 				<checksumPolicy>warn</checksumPolicy>
 				</snapshots-->
 		</repository>
-
+	
+  <localRepository>c:\myrepo</localRepository>
+  
 
 	</repositories>
 </project>
