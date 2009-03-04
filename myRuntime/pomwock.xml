@@ -1,0 +1,1924 @@
+<!-- 
+	- FILENAME
+	-   pom.xml
+	-
+	- DESCRIPTION
+	-   Maven POM file for testArchetype.testArchetype.runtime1
+	-
+	- AUTHOR
+	-    
+	- VERSION
+	-   0.1
+	- 		
+	- COPYRIGHT
+	-   Copyright (C) 2006 Genix Bioventures Pty. Ltd. All rights reserved.
+	-   This software is the confidential and proprietary information of
+	-   Genix Bioventures ("Confidential Information"). You shall not
+	-   disclose such Confidential Information and shall use it only in
+	-   accordance with the terms of the licence agreement you entered into
+	-   with Genix Bioventures.
+-->
+
+<project>
+
+	<!--  ========================= GENERAL CONFIGURATION ========================= 
+	-->
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>war</packaging>
+
+
+	<groupId>com.xbio.client.wock</groupId>
+	<artifactId>com.xbio.client.wock.runtime9</artifactId>
+	<version>1.16.9-SNAPSHOT</version>
+
+	<name>A Server-Side Equinox runtime project</name>
+	<url>http://www.xbiosystems.com</url>
+
+	<!--  ========================= PROPERTIES ========================= -->
+	<properties>
+		<spring.groupId>org.springframework</spring.groupId>
+		<spring.version>2.5</spring.version>
+		<spring.osgi.groupId>
+			org.springframework.osgi
+		</spring.osgi.groupId>
+		<spring.osgi.version>1.1-m2</spring.osgi.version>
+		<felix.commons.groupId>
+			org.apache.felix.commons
+		</felix.commons.groupId>
+	</properties>
+
+
+	<!--  ========================= DEPENDENCIES ========================= -->
+
+	<dependencies>
+
+
+		<!-- =============================================================== 
+			Spring-OSGi dependencies
+			===============================================================  -->
+
+		<!-- Springframework OSGi bundles -->
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>spring-osgi-annotation</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>spring-osgi-core</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>spring-osgi-extender</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>spring-osgi-io</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- added for 1.1-m2 -->
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>spring-osgi-web</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>spring-osgi-web-extender</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>spring-osgi-mock</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>spring-osgi-test</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- Springframework
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>${spring.groupId}</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.springframework
+			</artifactId>
+			<version>2.5.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Required libraries repackaged as OSGi bundles -->
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>aopalliance.osgi</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>asm.osgi</artifactId>
+			<version>2.2.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>aspectjrt.osgi</artifactId>
+			<version>1.5.2a-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>backport-util-concurrent</artifactId>
+			<version>3.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>c3p0.osgi</artifactId>
+			<version>0.9.1.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>cglib-nodep.osgi</artifactId>
+			<version>2.1.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>commons-attributes.osgi</artifactId>
+			<version>2.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>commons-beanutils.osgi</artifactId>
+			<version>1.7.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>commons-collections.osgi</artifactId>
+			<version>3.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>commons-lang.osgi</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>commons-logging.osgi</artifactId>
+			<version>1.1-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+			
+		-->
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>commons-pool.osgi</artifactId>
+			<version>1.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>hsqldb.osgi</artifactId>
+			<version>1.8.0.7</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--
+			<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>jsp-api.osgi</artifactId>
+			<version>2.0-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+		<!--			
+			<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>junit.osgi</artifactId>
+			<version>3.8.1-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+			
+		-->
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>log4j.osgi</artifactId>
+			<version>1.2.13-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>mx4j</artifactId>
+			<version>3.0.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>portlet-api.osgi</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${spring.osgi.groupId}</groupId>
+			<artifactId>struts.osgi</artifactId>
+			<version>1.2.9-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl104-over-slf4j</artifactId>
+			<version>1.3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${felix.commons.groupId}</groupId>
+			<artifactId>${felix.commons.groupId}.antlr</artifactId>
+			<version>2.7.6-0001-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- ===============================================================
+			GBV Bundled Third-Party OSGi Dependencies
+			===============================================================  -->
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>com.gbv.thirdparty.antlr</artifactId>
+			<version>2.7.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.javax.transaction
+			</artifactId>
+			<version>1.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>com.gbv.thirdparty.junit</artifactId>
+			<version>3.8.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.acegisecurity
+			</artifactId>
+			<version>1.0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>com.gbv.thirdparty.org.aopalliance</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.apache.commons.codec
+			</artifactId>
+			<version>1.3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.apache.commons.collections
+			</artifactId>
+			<version>3.2.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.apache.commons.dbcp
+			</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.apache.commons.logging
+			</artifactId>
+			<version>1.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.apache.commons.pool
+			</artifactId>
+			<version>1.3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.apache.commons.fileupload
+			</artifactId>
+			<version>1.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.apache.commons.io
+			</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>com.gbv.thirdparty.org.apache.log4j</artifactId>
+			<version>1.2.14</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.aspectj.weaver
+			</artifactId>
+			<version>1.5.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>com.gbv.thirdparty.org.dom4j</artifactId>
+			<version>1.6.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>com.gbv.thirdparty.net.sf.ehcache</artifactId>
+			<version>1.2.4-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>com.gbv.thirdparty.org.hibernate</artifactId>
+			<version>3.2.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.thirdparty</groupId>
+			<artifactId>
+				com.gbv.thirdparty.org.jdesktop.beansbinding
+			</artifactId>
+			<version>1.2.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--
+			<dependency>
+			<groupId>postgresql.osgi</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+		<!-- ===============================================================
+			GBV Entity model 
+			===============================================================  -->
+
+		<dependency>
+			<groupId>com.gbv.platform.entity.osgi</groupId>
+			<artifactId>entity-osgi</artifactId>
+			<version>0.7.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.entity.osgi.dao</groupId>
+			<artifactId>entity-dao</artifactId>
+			<version>0.7.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--
+			<dependency>
+			<groupId>com.gbv.platform.persistence</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>0.7-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+
+
+		<!-- ===============================================================
+			Workbench runtime (eclipse) 
+			===============================================================  -->
+
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>cm</artifactId>
+			<version>3.2.0.v20070116</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>log</artifactId>
+			<version>1.0.0.v20070226</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>runtime</artifactId>
+			<version>3.3.100.v20070530</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>jobs</artifactId>
+			<version>3.2.0.v20060603</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>preferences</artifactId>
+			<version>3.2.1.R32x_v20060717</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>contenttype</artifactId>
+			<version>3.2.0.v20060603</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.core.runtime.compatibility</groupId>
+			<artifactId>auth</artifactId>
+			<version>3.2.0.v20060601</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>event</artifactId>
+			<version>1.0.100.v20070516</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>help</artifactId>
+			<version>3.3.0.v20070524</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>expressions</artifactId>
+			<version>3.3.0.v20070606-0010</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>app</artifactId>
+			<version>1.0.0.v20070606</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- used the checked in versions
+			<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>osgi</artifactId>
+			<version>3.3.0.v20070530</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>registry</artifactId>
+			<version>3.3.0.v20070522</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>common</artifactId>
+			<version>3.2.0.v20060603</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+		<!-- ===============================================================
+			GUI - Karora / Moomba 
+			===============================================================  -->
+
+		<dependency>
+			<groupId>org.karora.moomba</groupId>
+			<artifactId>workbench</artifactId>
+			<version>0.9.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.karora.moomba</groupId>
+			<artifactId>help</artifactId>
+			<version>0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.karora.moomba</groupId>
+			<artifactId>ui</artifactId>
+			<version>0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.karora</groupId>
+			<artifactId>cooee</artifactId>
+			<version>1.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.karora</groupId>
+			<artifactId>orana</artifactId>
+			<version>0.9.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.karora</groupId>
+			<artifactId>cooee-sandbox</artifactId>
+			<version>1.2.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- ===============================================================
+			GBV Security service runtime dependencies
+			===============================================================  -->
+
+		<dependency>
+			<groupId>com.gbv.platform.security</groupId>
+			<artifactId>security-filter</artifactId>
+			<version>0.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.security</groupId>
+			<artifactId>model</artifactId>
+			<version>0.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.security</groupId>
+			<artifactId>javasecurity-jaas</artifactId>
+			<version>0.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>security-util-service-osgi</artifactId>
+			<version>0.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>security-service-osgi</artifactId>
+			<version>0.4.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>security-config-osgi</artifactId>
+			<version>0.4-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.platform</groupId>
+			<artifactId>login</artifactId>
+			<version>0.5-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--
+			<dependency>
+			<groupId>com.gbv.platform.security</groupId>
+			<artifactId>javasecurity-boot</artifactId>
+			<version>0.3</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+		<!-- =============================================  -->
+		<!-- User Management					-->
+		<!-- =============================================  -->
+
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>system-management-ui</artifactId>
+			<version>0.4.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+
+		<!-- =========================================================
+			GBV Audit service runtime dependencies
+			==========================================================  -->
+
+		<dependency>
+			<groupId>com.gbv.platform.entity</groupId>
+			<artifactId>audit</artifactId>
+			<version>0.7.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.executioncontext</groupId>
+			<artifactId>access-point</artifactId>
+			<version>0.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.executioncontext</groupId>
+			<artifactId>security-acegi</artifactId>
+			<version>0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.executioncontext</groupId>
+			<artifactId>ui-spring</artifactId>
+			<version>0.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- =======================================================
+			LOV runtime dependencies
+			========================================================  -->
+
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>com.gbv.platform.lovservices</artifactId>
+			<version>1.3.4-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>
+				com.gbv.platform.lovservices.bootloader
+			</artifactId>
+			<version>0.2.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>com.gbv.platform.contactgroup</artifactId>
+			<version>0.9.1-WOCK-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- ================ -->
+		<!-- OPTIONAL BUNDLES -->
+		<!-- ================ -->
+
+		<!-- =========================================================
+			Search and Metadata
+			=========================================================== -->
+		<dependency>
+			<groupId>com.xbio.platform</groupId>
+			<artifactId>export-ui</artifactId>
+			<version>0.3.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.platform</groupId>
+			<artifactId>export</artifactId>
+			<version>0.3.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.search</groupId>
+			<artifactId>com.gbv.platform.search.ui</artifactId>
+			<version>0.2.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.search</groupId>
+			<artifactId>query</artifactId>
+			<version>0.2.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform.entity</groupId>
+			<artifactId>com.gbv.platform.entity.bootstrap</artifactId>
+			<!-- <version>0.1.0-SNAPSHOT</version> -->
+			<version>0.9-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- ========================================================
+			Bookmark runtime dependencies
+			=========================================================  
+			<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>bookmark</artifactId>
+			<version>0.3.0-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>bookmark-gui</artifactId>
+			<version>0.3.0-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+		<!-- =========================================================
+			Polyfom Dependencies
+			=========================================================== 
+			
+			<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>polyform</artifactId>
+			<version>2.5.1-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>com.xbio.platform.polyform</groupId>
+			<artifactId>formselector-viewer</artifactId>
+			<version>0.5-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>com.xbio.platform.polyform</groupId>
+			<artifactId>forminstance-viewer</artifactId>
+			<version>0.5-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+			<groupId>com.xbio.platform.polyform</groupId>
+			<artifactId>templates-registry</artifactId>
+			<version>0.5-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+		<!-- =========================================================
+			Karora gui
+			=========================================================== 
+			<dependency>
+			<groupId>org.karora</groupId>
+			<artifactId>osgi-gui</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+
+		<!-- ===============================================================
+			WOCK Specific Config
+			===============================================================  -->
+
+		<!-- =================== GBV specific to wock =============== -->
+
+		<!-- Personnel -->
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>com.gbv.platform.personnel</artifactId>
+			<version>0.3.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>com.gbv.platform.contactdetails</artifactId>
+			<version>0.6.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>com.gbv.platform.orgchart</artifactId>
+			<version>0.3.0-WOCK-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Standard picker and service -->
+		<dependency>
+			<groupId>com.gbv.platform.standardcode</groupId>
+			<artifactId>com.gbv.platform.standardcode</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform.standardcode</groupId>
+			<artifactId>
+				com.gbv.platform.standardcode.picker
+			</artifactId>
+			<version>0.4.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- AutoDoc -->
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>autodoc</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>autodoc-config</artifactId>
+			<version>0.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>autodoc-reporting</artifactId>
+			<version>0.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>autodoc-reporting-config</artifactId>
+			<version>0.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>document-manager</artifactId>
+			<version>0.10.2-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!--  ================================= -->
+		<!--  = DOC MGR DEPENDENCIES ========== -->
+		<!--  ================================= -->
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>document-manager-lov-loader</artifactId>
+			<version>0.2.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>contentrepository</artifactId>
+			<version>0.9.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- ==== CALENDAR - used by Doc Manager== -->
+		<dependency>
+			<groupId>com.gbv.osgi.external.bundles</groupId>
+			<artifactId>ical4j</artifactId>
+			<version>1.0-beta3-GBV</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>calendar</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gbv.platform</groupId>
+			<artifactId>calendar-ui</artifactId>
+			<version>0.6-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.karora</groupId>
+			<artifactId>moomba.search</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.xbio.platform</groupId>
+			<artifactId>common</artifactId>
+			<version>0.3.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+
+		<!-- =================== XBIO SERVICES =============== -->
+		<dependency>
+			<groupId>com.xbio.platform.subject</groupId>
+			<artifactId>SubjectService</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.xbio.platform.patient</groupId>
+			<artifactId>PatientService</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.xbio.platform.medicalservice</groupId>
+			<artifactId>MedicalServiceService</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.xbio.platform.medicalencounter</groupId>
+			<artifactId>MedicalEncounterService</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- =================== WOCK SERVICES =============== -->
+
+		<dependency>
+			<groupId>com.xbio.client.wock</groupId>
+			<artifactId>WockCommon</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.wock.echozsocre</groupId>
+			<artifactId>
+				com.xbio.client.wock.echozsocre.service
+			</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.wock.patient</groupId>
+			<artifactId>WockPatientService</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.wock.medicalencounter</groupId>
+			<artifactId>WockMedicalEncounterService</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.wock.medicalservice</groupId>
+			<artifactId>WockMedicalServiceService</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.xbio.client.wock</groupId>
+			<artifactId>WockAppService</artifactId>
+			<version>0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+
+
+		<!-- =================== WOCK GUI =============== -->
+
+		<dependency>
+			<groupId>com.xbio.client.wock.common</groupId>
+			<artifactId>WockCommon-Cooee</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.xbio.client.wock.infospace</groupId>
+			<artifactId>WockInfoSpace-Cooee</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.wock.systemadmin</groupId>
+			<artifactId>WockSystemAdmin-Cooee</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.xbio.client.wock.advancesearch</groupId>
+			<artifactId>WockAdvanceSearch-Cooee</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.wock.echozsocre</groupId>
+			<artifactId>com.xbio.client.wock.echozsocre.ui</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.wock.patient</groupId>
+			<artifactId>WockPatient-Cooee</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- ================ Wock App Config ============= -->
+
+		<dependency>
+			<groupId>com.xbio.client.wock</groupId>
+			<artifactId>application</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.xbio.client.wock</groupId>
+			<artifactId>style-resource</artifactId>
+			<version>0.2-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.wock</groupId>
+			<artifactId>com.xbio.client.wock.bootloader</artifactId>
+			<version>0.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.xbio.client.wock</groupId>
+			<artifactId>com.xbio.client.wock.bootloader.cfg</artifactId>
+			<version>0.0.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xbio.client.rock</groupId>
+			<artifactId>
+				com.xbio.client.rock.lovservices.cfg
+			</artifactId>
+			<version>0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!-- Logging config fragment  -->
+		<dependency>
+			<groupId>com.xbio.client.wock</groupId>
+			<artifactId>com.xbio.client.wock.logger.cfg</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<!--
+			<dependency>
+			<groupId>com.gbv.thirdparty.org.apache</groupId>
+			<artifactId>log4j.fragment.cfg</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+
+		<!-- Advanced serach config -->
+		<dependency>
+			<groupId>com.xbio.client.wock.advancesearch</groupId>
+			<artifactId>
+				com.xbio.client.wock.advancesearch.cfg
+			</artifactId>
+			<version>0.1-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
+
+	<!--  ========================= BUILD CONFIGURATION ========================= 
+		
+	-->
+
+	<profiles>
+		<profile>
+			<id>kramer</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.gbv.platform.persistence</groupId>
+					<artifactId>hibernate</artifactId>
+					<version>0.7-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<plugins>
+					<!-- cargo plugin to perform remote deployment -->
+					<plugin>
+						<groupId>org.codehaus.cargo</groupId>
+						<artifactId>cargo-maven2-plugin</artifactId>
+						<version>0.3.1</version>
+
+						<configuration>
+
+							<container>
+								<containerId>tomcat5x</containerId>
+								<type>remote</type>
+							</container>
+							<!-- Configuration to use with the container -->
+							<configuration>
+								<type>runtime</type>
+								<properties>
+									<cargo.hostname>
+										kramer
+									</cargo.hostname>
+									<cargo.protocol>
+										http
+									</cargo.protocol>
+									<cargo.remote.username>
+										admin
+									</cargo.remote.username>
+									<cargo.remote.password>
+
+									</cargo.remote.password>
+									<cargo.servlet.port>
+										9898
+									</cargo.servlet.port>
+								</properties>
+							</configuration>
+							<!-- Deployer configuration -->
+							<deployer>
+								<type>remote</type>
+								<deployables>
+									<deployable>
+										<groupId>
+											com.xbio.client.wock
+										</groupId>
+										<artifactId>
+											com.xbio.client.wock.runtime9
+										</artifactId>
+										<type>war</type>
+										<properties>
+											<context>WOCK</context>
+										</properties>
+									</deployable>
+								</deployables>
+							</deployer>
+						</configuration>
+					</plugin>
+
+				</plugins>
+			</build>
+
+		</profile>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.gbv.platform.persistence</groupId>
+					<artifactId>hibernate</artifactId>
+					<version>0.7-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.wock.login</groupId>
+					<artifactId>nl1</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+			</dependencies>
+
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.1-alpha-1</version>
+						<configuration>
+							<webappDirectory>
+								WebContent
+							</webappDirectory>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>rock</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.xbio.client.rock.persistence</groupId>
+					<artifactId>hibernate</artifactId>
+					<version>0.7-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.rock.login</groupId>
+					<artifactId>nl1</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.rock</groupId>
+					<artifactId>
+						com.xbio.client.rock.lovservices.cfg
+					</artifactId>
+					<version>0.1-SNAPSHOT</version>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.rock</groupId>
+					<artifactId>
+						com.xbio.client.rock.xbio-resource
+					</artifactId>
+					<version>0.9.1-ROCK</version>
+					<scope>provided</scope>
+				</dependency>
+
+			</dependencies>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.1-alpha-1</version>
+						<configuration>
+							<webappDirectory>
+								WebContent
+							</webappDirectory>
+							<!-- <warName>rock.${version}</warName> -->
+							<classifier>rock</classifier>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>rock.chw.dev</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.xbio.client.rock.persistence</groupId>
+					<artifactId>hibernate</artifactId>
+					<version>0.7-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.rock.login</groupId>
+					<artifactId>nl1</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.rock</groupId>
+					<artifactId>
+						com.xbio.client.rock.lovservices.cfg
+					</artifactId>
+					<version>0.1-SNAPSHOT</version>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.rock</groupId>
+					<artifactId>
+						com.xbio.client.rock.xbio-resource
+					</artifactId>
+					<version>0.9.1-ROCK</version>
+					<scope>provided</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.1-alpha-1</version>
+						<configuration>
+							<webappDirectory>
+								WebContent
+							</webappDirectory>
+							<!-- <warName>rock.${version}</warName> -->
+							<classifier>rock</classifier>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>wock</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.xbio.client.wock.persistence</groupId>
+					<artifactId>hibernate</artifactId>
+					<version>0.7-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.wock.login</groupId>
+					<artifactId>nl1</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.gbv.platform.workbench</groupId>
+					<artifactId>xbio-resource</artifactId>
+					<version>0.9.1-WOCK-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+			</dependencies>
+
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<!--  <version>2.1-alpha-2</version> -->
+						<configuration>
+							<webappDirectory>
+								WebContent
+							</webappDirectory>
+							<!-- <warName>wock.${version}</warName> -->
+							<classifier>wock</classifier>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>wock.chw.dev</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.xbio.client.wock.persistence</groupId>
+					<artifactId>hibernate</artifactId>
+					<version>0.7-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.xbio.client.wock.login</groupId>
+					<artifactId>nl1</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.gbv.platform.workbench</groupId>
+					<artifactId>xbio-resource</artifactId>
+					<version>0.9.1-WOCK-SNAPSHOT</version>
+					<scope>provided</scope>
+				</dependency>
+
+			</dependencies>
+
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.1-alpha-1</version>
+						<configuration>
+							<webappDirectory>
+								WebContent
+							</webappDirectory>
+							<!-- <warName>wock.${version}</warName> -->
+							<classifier>wock</classifier>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+
+	</profiles>
+
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								WebContent/WEB-INF/eclipse/plugins
+							</outputDirectory>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>
+								true
+							</overWriteSnapshots>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>
+								WebContent/WEB-INF/eclipse/plugins
+							</directory>
+							<includes>
+								<include>*.jar</include>
+							</includes>
+							<excludes>
+								<exclude>
+									org.eclipse.equinox.common_3.3.0.v20070426.jar
+								</exclude>
+								<exclude>
+									org.eclipse.equinox.http.registry_1.0.0.v20070608.jar
+								</exclude>
+								<exclude>
+									org.eclipse.equinox.http.servlet_1.0.1.R33x_v20070816.jar
+								</exclude>
+								<exclude>
+									org.eclipse.equinox.http.servletbridge_1.0.0.v20070523.jar
+								</exclude>
+								<exclude>
+									org.eclipse.equinox.log_1.0.1.R32x_v20060717.jar
+								</exclude>
+								<exclude>
+									org.eclipse.equinox.registry_3.3.1.R33x_v20070802.jar
+								</exclude>
+								<exclude>
+									org.eclipse.update.configurator_3.2.100.v20070322.jar
+								</exclude>
+								<exclude>
+									org.eclipse.osgi_3.3.1.R33x_v20070828.jar
+								</exclude>
+								<exclude>
+									org.eclipse.osgi.services_3.1.200.v20070605.jar
+								</exclude>
+								<exclude>
+									org.eclipse.osgi.util_3.1.200.v20070605.jar
+								</exclude>
+								<exclude>
+									org.eclipse.update.configurator_3.2.1.v20092006.jar
+								</exclude>
+								<exclude>
+									javax.servlet_2.4.0.v200706111738.jar
+								</exclude>
+								<exclude>
+									javax.servlet.jsp_2.0.0.v200706191603.jar
+								</exclude>
+								<exclude>
+									servletapi.osgi-2.4-SNAPSHOT.jar
+								</exclude>
+
+								<!-- specific to wock -->
+								<exclude>
+									org.eclipse.core.resources_3.3.0.v20070604.jar
+								</exclude>
+								<exclude>
+									org.eclipse.core.filebuffers_3.3.1.r331_v20070829.jar
+								</exclude>
+								<exclude>
+									com.ibm.icu_3.6.1.v20070906.jar
+								</exclude>
+								<!-- REQUIRED FOR MOOMBA.SEARCH -->
+								<exclude>
+									org.eclipse.jface.text_3.3.1.r331_v20070629.jar
+								</exclude>
+								<exclude>
+									org.eclipse.core.filesystem_1.1.0.v20070606.jar
+								</exclude>
+								<exclude>
+									org.eclipse.text_3.3.0.v20070606-0010.jar
+								</exclude>
+								<exclude>
+									org.eclipse.jface_3.3.1.M20070910-0800b.jar
+								</exclude>
+								<exclude>
+									org.eclipse.core.commands_3.3.0.I20070605-0010.jar
+								</exclude>
+								<exclude>
+									org.eclipse.swt_3.3.2.v3347.jar
+								</exclude>
+							</excludes>
+							<followSymlinks>true</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<!--
+				<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+				<webappDirectory>WebContent</webappDirectory>
+				<warName>WOCK</warName>
+				</configuration>
+				</plugin>
+			-->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<connectors>
+						<connector
+							implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8888</port>
+							<maxIdleTime>6000000</maxIdleTime>
+						</connector>
+					</connectors>
+
+					<webAppSourceDirectory>
+						WebContent
+					</webAppSourceDirectory>
+
+					<systemProperties>
+						<systemProperty>
+							<name>eclipse.application</name>
+							<value>
+								com.xbio.client.wock.application.application
+							</value>
+						</systemProperty>
+
+						<systemProperty>
+							<name>eclipse.product</name>
+							<value>
+								com.xbio.client.wock.application.product
+							</value>
+						</systemProperty>
+
+						<systemProperty>
+							<name>java.security.debug</name>
+							<value>access:failure</value>
+						</systemProperty>
+						<systemProperty>
+							<name>eclipse.security</name>
+							<value>
+								org.eclipse.osgi.framework.internal.core.FrameworkSecurityManager
+							</value>
+						</systemProperty>
+						<systemProperty>
+							<name>java.security.manager</name>
+							<value>
+								org.eclipse.osgi.framework.internal.core.FrameworkSecurityManager
+							</value>
+						</systemProperty>
+						<systemProperty>
+							<name>java.security.policy</name>
+							<!-- value>security/rock/java.policy</value -->
+							<value>security/wock/java.policy</value>
+						</systemProperty>
+						<systemProperty>
+							<name>java.security.auth.login.config</name>
+							<value>security/jaas.config</value>
+						</systemProperty>
+						<!--<systemProperty>
+							<name>java.security.properties</name>
+							<value>security/java.security</value>
+							</systemProperty>
+						-->
+						<systemProperty>
+							<name>eclipse.application</name>
+							<value>
+								com.xbio.nba.abdr.application.application
+							</value>
+						</systemProperty>
+						<systemProperty>
+							<name>eclipse.product</name>
+							<value>
+								com.xbio.nba.abdr.application.product
+							</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<!--  ========================= REPOSITORY CONFIGURATION ========================= 
+	-->
+	<repositories>
+		<repository>
+			<id>gbv-central</id>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<url>http://wayne:9999/maven-repository</url>
+		</repository>
+
+		<repository>
+			<releases />
+			<id>Karora Releases</id>
+			<url>http://www.karora.org/maven-repository</url>
+		</repository>
+
+		<repository>
+			<snapshots />
+			<id>Karora Snapshots</id>
+			<url>http://www.karora.org/maven-snapshots</url>
+		</repository>
+
+		<repository>
+			<releases />
+			<id>Karora Third Party Libraries</id>
+			<url>http://www.karora.org/maven-thirdparty</url>
+		</repository>
+
+		<repository>
+			<id>springframework.org SNAPSHOT</id>
+			<name>Springframework SNAPSHOT Repository</name>
+			<url>
+				http://static.springframework.org/maven2-snapshots/
+			</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>springframework.org Release</id>
+			<name>Springframework Release Repository</name>
+			<url>
+				http://s3.amazonaws.com/maven.springframework.org/milestone
+			</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>springframework.org DM Release</id>
+			<name>Spring Framework - Spring OSGi 3rd party</name>
+			<url>
+				http://s3.amazonaws.com/maven.springframework.org/osgi
+			</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<!--  ========================= RELEASE CONFIGURATION ========================= 
+	-->
+	<distributionManagement>
+		<repository>
+			<id>ssh-repository</id>
+			<url>scp://wayne/home/maven-proxy/target/repo-local</url>
+		</repository>
+		<!--
+			<site>
+			<id>gbv-core-sites</id>
+			<url>
+			scp://garth/usr/local/apache/htdocs/content-repository
+			</url>
+			</site>
+		-->
+	</distributionManagement>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>
+					maven-project-info-reports-plugin
+				</artifactId>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<scm>
+		<connection>
+			scm:svn:http://sourceforge/svn/repos/TestRuntime
+		</connection>
+		<developerConnection>
+			scm:svn:http://sourceforge/svn/repos/TestRuntime
+		</developerConnection>
+	</scm>
+
+</project>
