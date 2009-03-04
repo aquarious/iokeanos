@@ -18,8 +18,6 @@
 
 	<servlet id="bridge">
 		<servlet-name>equinoxbridgeservlet</servlet-name>
-		<display-name>Equinox Bridge Servlet</display-name>
-		<description>Equinox Bridge Servlet</description>
 		<servlet-class>org.eclipse.equinox.servletbridge.BridgeServlet</servlet-class>
 		<!-- -->
 		<init-param>
