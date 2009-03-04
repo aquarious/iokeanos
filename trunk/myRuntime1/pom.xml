@@ -4,9 +4,9 @@
 	<groupId>com.iokeanos</groupId>
 	<artifactId>myRuntime1</artifactId>
 	<packaging>war</packaging>
-	<name>Test OSGi runtime</name>
+	<name>Test OSGi runtime 1</name>
 	<version>0.0.1-SNAPSHOT</version>
-	<description>A simple acide test of OSGi runtime</description>
+	<description>A simple acid test of OSGi runtime</description>
 
 
 	<build>
@@ -76,6 +76,8 @@
 								<exclude>org.eclipse.update.configurator_3.2.100.v20070322.jar</exclude>
 								<exclude>HelloWeb1_1.0.0.jar</exclude>
 								<exclude>HelloWeb2_1.0.0.jar</exclude>
+								<exclude>be.jaisy.ui.gwtfaces.sample_1.0.0.jar</exclude>
+								<exclude>be.jaisy.ui.gwtfaces_1.0.0.jar</exclude>
 							</excludes>
 							<followSymlinks>true</followSymlinks>
 						</fileset>
