@@ -64,25 +64,28 @@
 								<include>*.jar</include>
 							</includes>
 							<excludes>
-								<!--start equinox-->
-								<exclude>org.eclipse.equinox.common_3.3.0.200704022148.jar</exclude>
-								<exclude>org.eclipse.equinox.http.registry_1.0.0.200704022148.jar</exclude>
-								<exclude>org.eclipse.equinox.http.servlet_1.0.0.200704022148.jar</exclude>
-								<exclude>org.eclipse.equinox.http.servletbridge_1.0.0.200704022148.jar</exclude>
-								<exclude>org.eclipse.equinox.registry_3.3.0.v20070318.jar</exclude>
-								<exclude>org.eclipse.osgi_3.3.0.200704022148.jar</exclude>
-								<exclude>org.eclipse.osgi.services_3.1.100.200704022148.jar</exclude>
+								<!--start equinox 3.4-->
+								
+								<exclude>org.eclipse.equinox.common_3.4.0.v20080421-2006.jar</exclude>
+								<exclude>org.eclipse.equinox.http.registry_1.0.100.v20080427-0830.jar</exclude>
+								<exclude>org.eclipse.equinox.http.servlet_1.0.100.v20080427-0830.jar</exclude>
+								<exclude>org.eclipse.equinox.http.servletbridge_1.0.0.v20080427-0830.jar</exclude>
+								<exclude>org.eclipse.equinox.registry_3.4.0.v20080516-0950.jar</exclude>
+								<exclude>org.eclipse.osgi_3.4.0.v20080605-1900.jar</exclude>
+								<exclude>org.eclipse.osgi.services_3.1.200.v20071203.jar</exclude>
 								<exclude>org.eclipse.update.configurator_3.2.100.v20070322.jar</exclude>
+								<!--exclude>org.eclipse.equinox.util_1.0.0.v20080414.jar</exclude-->
+
 								<!--start spring-->
+								<exclude>spring-osgi-core-1.1.3.jar</exclude>
+								<exclude>spring-osgi-extender-1.1.3.jar</exclude>
+								<exclude>spring-osgi-io-1.1.3.jar</exclude>
 								<exclude>spring-aop-2.5.5.jar</exclude>
 								<exclude>spring-beans-2.5.5.jar</exclude>
 								<exclude>spring-context-2.5.5.jar</exclude>
 								<exclude>spring-core-2.5.5.jar</exclude>
-								<exclude>spring-orm.jar</exclude>
-								<exclude>spring-osgi-core-1.1.3.jar</exclude>
-								<exclude>spring-osgi-extender-1.1.3.jar</exclude>
-								<exclude>spring-osgi-io-1.1.3.jar</exclude>
-								<exclude>spring-tx.jar</exclude>
+								<!--exclude>spring-orm.jar</exclude-->
+								<!--exclude>spring-tx.jar</exclude-->
 								<exclude>com.springsource.slf4j.api-1.5.0.jar</exclude>
 								<exclude>com.springsource.slf4j.log4j-1.5.0.jar</exclude>
 								<exclude>com.springsource.slf4j.org.apache.commons.logging-1.5.0.jar</exclude>
@@ -90,7 +93,7 @@
 								<exclude>com.springsource.org.aopalliance-1.0.0.jar</exclude>
 								<exclude>spring-osgi-annotation-1.1.3.jar</exclude>
 								<!--samples plug in bundles-->
-								<exclude>ContactSpring_1.0.0.jar</exclude>
+								<exclude>Contact_1.0.0.jar</exclude>
 								<exclude>HelloSpring_1.0.0.jar</exclude>
 							</excludes>
 							<followSymlinks>true</followSymlinks>
