@@ -3,9 +3,9 @@ package com.iokeanos.spring.service.impl;
 import java.util.List;
 
 import com.iokeanos.spring.service.Contact;
-import com.iokeanos.spring.service.ContactDAO;
+import com.iokeanos.spring.service.ContactService;
 
-public class ContactDAOImpl implements ContactDAO {
+public class ContactServiceImpl implements ContactService {
     public Contact getContact(int contactId) {
         System.out.println("Inside ContactDAOImpl.getContact()");
         return null;
