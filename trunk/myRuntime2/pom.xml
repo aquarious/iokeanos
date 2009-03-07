@@ -98,6 +98,7 @@
 								<!--samples plug in bundles-->
 								<exclude>HelloSpring_1.0.0.jar</exclude>
 								<exclude>HelloSpringSeviceSample_1.0.0.jar</exclude>
+								<exclude>HelloSpringServiceSampleExtention_1.0.0.jar</exclude>
 								<!-- logger -->
 								<exclude>log4jproperties_1.0.0.jar</exclude>
 							</excludes>
