@@ -2,7 +2,7 @@ package com.iokeanos.spring.service;
 
 import java.util.List;
 
-public interface ContactDAO {
+public interface ContactService {
 	public List getContactList();
 
 	public Contact getContact(int contactId);

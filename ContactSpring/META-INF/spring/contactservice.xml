@@ -6,10 +6,10 @@
 
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="contactDAOService"
+    <bean name="contactService"
 
-        class="com.iokeanos.spring.service.impl.ContactDAOImpl">
-
+        class="com.iokeanos.spring.service.impl.ContactServiceImpl">
+               
     </bean>
 
 </beans>

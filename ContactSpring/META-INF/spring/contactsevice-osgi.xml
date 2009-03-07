@@ -4,7 +4,8 @@
 	xmlns:osgi="http://www.springframework.org/schema/osgi"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                       http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
-	<osgi:service id="contactDAOOSGiService" ref="contactDAOService"
-		interface="com.iokeanos.spring.service.ContactDAO">
+	
+	<osgi:service id="contactServiceOSGi" ref="contactService"
+		interface="com.iokeanos.spring.service.ContactService">
 	</osgi:service>
 </beans>
