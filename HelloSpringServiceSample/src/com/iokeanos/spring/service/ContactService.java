@@ -12,5 +12,6 @@ public interface ContactService {
 	public void updateContact(Contact contact);
 
 	public void deleteContact(int contactId);
-
+	
+	public void echo();
 }

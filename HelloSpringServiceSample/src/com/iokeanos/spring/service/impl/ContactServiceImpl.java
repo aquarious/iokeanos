@@ -30,4 +30,9 @@ public class ContactServiceImpl implements ContactService {
 		System.out.println("updateContact(Contact contact)");
 		
 	}
+
+	public void echo() {
+		System.out.println("\n\n\n Hi there, I'm your service, echo echo ....");
+		
+	}
 }
