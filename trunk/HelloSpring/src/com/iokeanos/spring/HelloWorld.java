@@ -1,21 +1,31 @@
 package com.iokeanos.spring;
 
+import com.iokeanos.spring.service.ContactService;
+
 
 public class HelloWorld {
-/*	ContactDAO contactDAO;
-    public ContactDAO getContactDAO() {
-        return contactDAO;
-    }
-    public void setContactDAO(ContactDAO contactDAO) {
-        this.contactDAO = contactDAO;
-    }*/
-    public void start() throws Exception {
-        System.out.println("Hello Spring World!! " );
-        //System.out.println(contactDAO.getContactList()  );
+	
+	
+	
+	public void start() throws Exception {
+        System.out.println("\n\n\n Hello Spring World!! " );
+        contactService.echo();
     }
     public void stop() throws Exception {
-        System.out.println("Goodbye Spring World!!");
+        System.out.println("\n\n\nGoodbye Spring World!!");
     }
 
 
+    
+    
+    ContactService contactService;
+    
+	
+	
+    public ContactService getContactService() {
+		return contactService;
+	}
+	public void setContactService(ContactService contactService) {
+		this.contactService = contactService;
+	}
 }
