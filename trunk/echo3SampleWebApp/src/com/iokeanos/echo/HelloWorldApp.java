@@ -1,7 +1,5 @@
 package com.iokeanos.echo;
 
-import com.iokeanos.spring.service.ContactService;
-
 import nextapp.echo.app.ApplicationInstance;
 import nextapp.echo.app.Color;
 import nextapp.echo.app.ContentPane;
@@ -23,24 +21,14 @@ public class HelloWorldApp extends ApplicationInstance {
         
         contentPane.add(label);
         
-        System.out.println("\n\n\n--->" + contactService);
+        System.out.println("\n\n\n--->" + AppServices.contactService);
         
-        if (contactService != null){
-        	contactService.echo();
+        if (AppServices.contactService != null){
+        	AppServices.contactService.echo();
         	System.out.println("\n\n\n---> nothing happen");
         }
         
         return window;
     }
 	
-	
-	ContactService contactService;
-	
-	public ContactService getContactService() {
-		return contactService;
-	}
-
-	public void setContactService(ContactService contactService) {
-		this.contactService = contactService;
-	}
 }
