@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Echo3SampleWebApp Plug-in
+Bundle-SymbolicName: echo3SampleWebApp;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: echo3_OSGi
+Import-Package: javax.servlet,
+ javax.servlet.http,
+ org.apache.log4j,
+ org.osgi.framework,
+ org.osgi.service.http,
+ org.osgi.util.tracker
+Bundle-Activator: com.iokeanos.echo.Activator
