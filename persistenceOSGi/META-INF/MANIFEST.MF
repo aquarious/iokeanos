@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PersistenceOSGi Plug-in
+Bundle-SymbolicName: persistenceOSGi
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Export-Package: javax.persistence,
+ javax.persistence.spi
